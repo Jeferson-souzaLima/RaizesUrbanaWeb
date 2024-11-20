@@ -1,0 +1,109 @@
+﻿@model IEnumerable<RaizesUrbanaWeb.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Produtos";
+}
+
+<link href="~/css/produtos.css" rel="stylesheet" />
+
+<div class="produtos-container">
+    <!-- Produto 1 -->
+    <div class="produto-card">
+        <div class="produto-imagem">
+            <img src="~/img/Alface1.png" alt="Alface Lisa">
+        </div>
+        <div class="produto-info">
+            <h2>Alface Lisa</h2>
+            <p>Leve e delicada, a Alface Lisa é perfeita para saladas frescas e refeições leves. Com folhas macias e textura uniforme, ela traz suavidade e um sabor sutil ao seu prato.</p>
+            <button class="btn-comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Produto 2 -->
+    <div class="produto-card">
+        <div class="produto-imagem">
+            <img src="~/img/AlfaceRoxa.png" alt="Alface Roxa">
+        </div>
+        <div class="produto-info">
+            <h2>Alface Roxa</h2>
+            <p>Além de um visual vibrante, a Alface Roxa oferece sabor suave e propriedades antioxidantes naturais. Suas folhas de tonalidade única fazem dela excelente para saladas.</p>
+            <button class="btn-comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Produto 3 -->
+    <div class="produto-card">
+        <div class="produto-imagem">
+            <img src="~/img/AlfaceCrespa.png" alt="Alface Crespa">
+        </div>
+        <div class="produto-info">
+            <h2>Alface Crespa</h2>
+            <p>Com suas folhas crocantes e de sabor marcante, a Alface Crespa é a escolha ideal para quem busca uma textura mais firme e refrescante. Perfeita para saladas.</p>
+            <button class="btn-comprar">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Produto 4 -->
+    <div class="produto-card">
+        <div class="produto-imagem">
+            <img src="~/img/AlfaceAmericana.png" alt="Alface Americana">
+        </div>
+        <div class="produto-info">
+            <h2>Alface Americana</h2>
+            <p>A Alface Americana é caracterizada por suas folhas crocantes e volumosas, com um sabor suave que combina com qualquer tipo de preparo. É a alface perfeita para crocância.</p>
+            <button class="btn-comprar">Comprar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Compra -->
+<div id="modal-compra" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <h2 id="nome-produto">Nome do Produto</h2>
+        <p id="preco-produto">Preço: R$<span id="preco-unidade">0.00</span></p>
+
+        <!-- Escolha de Quantidade -->
+        <h3>Quantidade</h3>
+        <label>
+            <input type="radio" name="quantidade" value="1" checked> 1 Unidade - R$<span id="preco-1">0.00</span>
+        </label>
+        <label>
+            <input type="radio" name="quantidade" value="3"> 3 Unidades - R$<span id="preco-3">0.00</span>
+        </label>
+        <label>
+            <input type="radio" name="quantidade" value="10"> 10 Unidades - R$<span id="preco-10">0.00</span>
+        </label>
+
+        <!-- Mensagem de Frete Grátis -->
+        <h3>Frete</h3>
+        <p>Frete Grátis para todas as compras!</p>
+
+        <!-- Formulário de Pedido -->
+        <h3>Preencha seus Dados</h3>
+        <form method="post" action="@Url.Action("FinalizarCompra", "Home")">
+            <input type="hidden" name="Produto" id="produto" />
+            <input type="hidden" name="PrecoTotal" id="preco-total" />
+            <input type="text" name="NomeRemetente" placeholder="Seu Nome" required />
+            <input type="text" name="Endereco" placeholder="Endereço" required />
+
+            <h3>Forma de Pagamento</h3>
+            <label>
+                <input type="radio" name="FormaPagamento" value="pix" required> PIX
+            </label>
+            <label>
+                <input type="radio" name="FormaPagamento" value="cartao"> Cartão de Crédito
+            </label>
+
+            <!-- Mensagem Frete Grátis -->
+            <p>Frete Grátis!</p>
+
+            <button type="submit">Finalizar Compra</button>
+        </form>
+
+
+
+@section Scripts {
+    <script src="~/js/modal-compra.js"></script>
+}

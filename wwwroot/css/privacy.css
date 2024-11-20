@@ -1,0 +1,86 @@
+﻿body {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background: url('/img/produtos.png') no-repeat center center fixed;
+    background-size: cover; /* Garante que a imagem cubra todo o fundo */
+    min-height: 100vh; /* Garante que o fundo cobre pelo menos a altura da tela */
+    background-color: #f5f5f5; /* Fundo claro para destacar os produtos */
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho da página */
+.privacy-header {
+    background-color: #0E5617; /* Fundo verde escuro */
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+    .privacy-header h1 {
+        font-size: 36px;
+        margin: 0;
+        font-family: 'Kaushan Script', cursive;
+    }
+
+/* Container principal */
+.privacy-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Conteúdo da página */
+.privacy-content {
+    padding: 20px;
+    color: #333;
+}
+
+    .privacy-content section {
+        margin-bottom: 20px;
+    }
+
+    .privacy-content h2 {
+        color: #34B950;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .privacy-content p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 10px 0;
+    }
+
+    .privacy-content ul {
+        margin-left: 20px;
+        list-style: disc;
+        color: #0E5617;
+    }
+
+        .privacy-content ul li {
+            margin-bottom: 8px;
+        }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .privacy-container {
+        margin: 20px;
+    }
+
+    .privacy-header h1 {
+        font-size: 28px;
+    }
+
+    .privacy-content h2 {
+        font-size: 20px;
+    }
+
+    .privacy-content p {
+        font-size: 14px;
+    }
+}

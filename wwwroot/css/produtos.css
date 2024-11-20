@@ -1,0 +1,182 @@
+﻿body {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background: url('/img/produtos.png') no-repeat center center fixed;
+    background-size: cover; /* Garante que a imagem cubra todo o fundo */
+    min-height: 100vh; /* Garante que o fundo cobre pelo menos a altura da tela */
+    background-color: #f5f5f5; /* Fundo claro para destacar os produtos */
+    padding: 0;
+}
+
+/* Container dos produtos */
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Garante o espaçamento entre os cards */
+    gap: 80px; /* Aumenta o espaçamento entre os produtos (direita e esquerda) */
+    padding: 40px;
+}
+
+/* Estilização dos cartões de produto */
+.produto-card {
+    background-color: #34B950; /* Fundo verde do produto */
+    width: 500px; /* Diminuir a largura do retângulo */
+    height: 220px; /* Altura do card */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row; /* Organiza o conteúdo em linha (horizontal) */
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Define o ponto de referência para o círculo */
+}
+
+/* Estilização do círculo com a imagem, posicionado à frente do retângulo */
+.produto-imagem {
+    width: 220px; /* Ajusta a largura do círculo para ser igual à altura do retângulo */
+    height: 220px; /* A altura do círculo será igual à altura do retângulo */
+    background-color: #0E5617; /* Fundo verde escuro */
+    border-radius: 50%; /* Mantém o formato circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* Posiciona o círculo fora do fluxo normal do layout */
+    left: -120px; /* Ajusta o círculo mais à esquerda para sobrepor o retângulo */
+    top: 0; /* Coloca o círculo no topo do card */
+    overflow: hidden; /* Garante que a imagem fique dentro do círculo */
+    transition: width 0.3s ease, height 0.3s ease; /* Animação ao aumentar */
+}
+
+    .produto-imagem img {
+        width: 100%; /* A imagem ocupará todo o espaço disponível no círculo */
+        height: 100%;
+        object-fit: cover; /* Garante que a imagem fique proporcional */
+        border-radius: 50%; /* Mantém o formato circular */
+    }
+
+/* Ao passar o mouse, círculo maior */
+.produto-card:hover .produto-imagem {
+    width: 240px; /* Aumenta um pouco a largura do círculo */
+    height: 240px; /* Aumenta um pouco a altura do círculo */
+}
+
+/* Informações do produto */
+.produto-info {
+    color: white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente as informações */
+    height: 100%;
+    text-align: left; /* Alinha o texto à esquerda */
+    margin-left: 100px; /* Ajusta a margem para centralizar mais as informações */
+    width: 100%; /* Ajusta a largura para ocupar o restante do espaço disponível */
+}
+
+    /* Ajuste no título */
+    .produto-info h2 {
+        font-size: 20px;
+        color: #0E5617; /* Cor do título */
+        margin: 0;
+    }
+
+    /* Ajuste na descrição */
+    .produto-info p {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        color: white; /* Cor da descrição */
+        margin: 10px 0;
+        overflow: hidden; /* Evita que o texto ultrapasse o limite do card */
+        text-overflow: ellipsis; /* Adiciona "..." quando o texto é muito longo */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Limita o texto a 3 linhas */
+        -webkit-box-orient: vertical;
+    }
+
+/* Botão Comprar Agora */
+.btn-comprar {
+    background-color: #FCC800;
+    color: black;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .produtos-container {
+        flex-direction: column; /* Alinha os produtos em uma coluna */
+        padding: 20px;
+    }
+
+    .produto-card {
+        width: 100%; /* Faz o card ocupar 100% da largura da tela */
+        min-height: auto; /* Permite que o card aumente de altura conforme o conteúdo */
+    }
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    margin: 100px auto;
+    position: relative;
+}
+
+    .modal-content h2, .modal-content h3 {
+        margin: 10px 0;
+    }
+
+    .modal-content input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .modal-content label {
+        display: block;
+        margin: 5px 0;
+    }
+
+button#btn-finalizar-compra {
+    background-color: #34B950;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button#btn-finalizar-compra:hover {
+        background-color: #28A045;
+    }
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+}

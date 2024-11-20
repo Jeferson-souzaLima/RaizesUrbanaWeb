@@ -1,0 +1,74 @@
+﻿@model RaizesUrbanaWeb.Models.Contact
+
+@{
+    ViewData["Title"] = "Contato";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Kaushan+Script&display=swap" rel="stylesheet">
+<link href="~/css/contato.css" rel="stylesheet" />
+
+<body>
+<section class="contact-section">
+    <div class="contact-info">
+        <h1 class="kaushan">Informações de Contato</h1>
+        <ul class="info-list">
+            <li><strong>Endereço:</strong> Rua das Flores, 123 - Bairro Verde, Jardins - SP (12345-000)</li>
+            <li><strong>Telefone:</strong> +55 (11) 1234-5678</li>
+            <li><strong>Email:</strong> contato@raizesurbana.com</li>
+        </ul>
+
+        <h2 class="josefin-bold">Horário de Funcionamento</h2>
+        <ul class="info-list">
+            <li>Segunda a Sexta: 8h - 18h</li>
+            <li>Sábado e Domingo: 8h - 14h</li>
+        </ul>
+
+        <h2 class="josefin-bold">Redes Sociais</h2>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <h2 class="josefin-bold">FAQ</h2>
+        <p><a href="/faq">Clique aqui para acessar nossa FAQ.</a></p>
+
+        <h2 class="josefin-bold">Política de Privacidade</h2>
+        <p><a href="@Url.Action("Privacy", "Home")">Política de Privacidade</a></p>
+
+    </div>
+
+    <div class="contact-form">
+        <h1 class="kaushan">Formulário de Contato</h1>
+        <form method="post" action="@Url.Action("EnviarContato", "Home")">
+            <div class="form-group">
+                <input type="text" name="Name" placeholder="Nome" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <input type="email" name="Email" placeholder="E-mail" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <textarea name="Message" placeholder="Mensagem" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">ENVIAR</button>
+        </form>
+    </div>
+</section>
+</body>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <text>toastr.success('@TempData["MensagemSucesso"]');</text>
+    }
+    @if (TempData["MensagemErro"] != null)
+    {
+        <text>toastr.error('@TempData["MensagemErro"]');</text>
+    }
+    });
+</script>
