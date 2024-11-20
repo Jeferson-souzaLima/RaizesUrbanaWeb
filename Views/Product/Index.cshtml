@@ -1,0 +1,60 @@
+﻿@model IEnumerable<RaizesUrbanaWeb.Models.Product>
+
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+<link href="~/css/produtos.css" rel="stylesheet" />
+
+<div class="produtos-container">
+    <!-- Produto 1 -->
+    <div class="produto-card">
+        <div class="produto-imagem">
+            <img src="~/img/placeholder.png" alt="Produto 1">
+        </div>
+        <div class="produto-info">
+            <h2>Produto 1</h2>
+            <p>Descrição breve do produto. Informações adicionais podem ir aqui.</p>
+            <button class="btn-comprar">Comprar Agora</button>
+        </div>
+    </div>
+
+    <!-- Produto 2 -->
+    <div class="produto-card">
+        <div class="produto-imagem">
+            <img src="~/img/placeholder.png" alt="Produto 2">
+        </div>
+        <div class="produto-info">
+            <h2>Produto 2</h2>
+            <p>Descrição breve do produto. Informações adicionais podem ir aqui.</p>
+            <button class="btn-comprar">Comprar Agora</button>
+        </div>
+    </div>
+
+    <!-- Produto 3 -->
+    <div class="produto-card">
+        <div class="produto-imagem">
+            <img src="~/img/placeholder.png" alt="Produto 3">
+        </div>
+        <div class="produto-info">
+            <h2>Produto 3</h2>
+            <p>Descrição breve do produto. Informações adicionais podem ir aqui.</p>
+            <button class="btn-comprar">Comprar Agora</button>
+        </div>
+    </div>
+
+    <!-- Produto 4 -->
+    <div class="produto-card">
+        <div class="produto-imagem">
+            <img src="~/img/placeholder.png" alt="Produto 4">
+        </div>
+        <div class="produto-info">
+            <h2>Produto 4</h2>
+            <p>Descrição breve do produto. Informações adicionais podem ir aqui.</p>
+            <button class="btn-comprar">Comprar Agora</button>
+        </div>
+    </div>
+</div>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}

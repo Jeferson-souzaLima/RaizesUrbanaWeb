@@ -1,0 +1,103 @@
+﻿body {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background: url('/img/contato.png') no-repeat center center fixed;
+    background-size: cover; /* Garante que a imagem cubra todo o fundo */
+    min-height: 100vh; /* Garante que o fundo cobre pelo menos a altura da tela */
+}
+
+.contact-section {
+    display: flex;
+}
+
+/* Parte Esquerda */
+.contact-info {
+    width: 50%;
+    padding: 2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.kaushan {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.josefin-bold {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.info-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+    .info-list li {
+        margin: 0.5rem 0;
+    }
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: blue;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+    .social-icon:hover {
+        color: #ff9900; 
+    }
+
+/* Parte Direita */
+.contact-form {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .contact-form form {
+        width: 100%;
+    }
+
+    .contact-form .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .contact-form .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+        .contact-form .form-control:focus {
+            outline: none;
+            border-color: #ff9900; 
+        }
+
+    .contact-form button {
+        width: 100%;
+        padding: 1rem;
+        background-color: #ff9900;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+        .contact-form button:hover {
+            background-color: #ff7f00;
+        }

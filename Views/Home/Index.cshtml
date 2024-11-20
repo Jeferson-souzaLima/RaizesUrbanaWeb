@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Início";
+}
+
+<link href="~/css/index.css" rel="stylesheet" />
+
+<div class="welcome-section">
+    <div class="welcome-message">
+        <h1>Bem Vindo à</h1>
+        <h2>Raízes Urbana</h2>
+        <p>"Alfaceja bem-vindo à Raízes Urbana! Aqui, cultivamos sabor e frescor que vão fazer você sorrir!"</p>
+
+        <!-- Botão Comprar Agora -->
+        <a href="#" class="btn-comprar-agora" data-bs-toggle="modal" data-bs-target="#loginModal">COMPRAR AGORA</a>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-left">
+                    <!-- Logo Centralizado -->
+                    <img src="logo.png" alt="Logo" class="modal-logo">
+                    <!-- Mensagens de boas-vindas -->
+                    <p class="welcome-message">Que bom ter você de volta!</p>
+                    <p class="small-message">Acesse sua conta agora mesmo</p>
+                    <!-- Botão Entrar -->
+                    <button type="button" class="btn-entrar">Entrar</button>
+                    <!-- Link Esqueci minha senha -->
+                    <p class="forgot-password"><a href="#">Esqueci minha senha</a></p>
+                </div>
+
+                <div class="modal-right">
+                    <!-- Título e Formulário de Cadastro -->
+                    <h5 class="modal-title">Crie sua conta</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senha" required>
+                        </div>
+                        <button type="submit" class="btn-criar-conta">Criar Conta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
