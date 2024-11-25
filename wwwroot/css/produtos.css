@@ -5,6 +5,7 @@
     background-size: cover; /* Garante que a imagem cubra todo o fundo */
     min-height: 100vh; /* Garante que o fundo cobre pelo menos a altura da tela */
     background-color: #f5f5f5; /* Fundo claro para destacar os produtos */
+    margin: 0;
     padding: 0;
 }
 
@@ -59,6 +60,7 @@
     width: 240px; /* Aumenta um pouco a largura do círculo */
     height: 240px; /* Aumenta um pouco a altura do círculo */
 }
+
 
 /* Informações do produto */
 .produto-info {

@@ -17,7 +17,6 @@ namespace RaizesUrbanaWeb.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -68,7 +67,6 @@ namespace RaizesUrbanaWeb.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("RaizesUrbanaWeb.Models.OrderItem", b =>
@@ -163,7 +161,6 @@ namespace RaizesUrbanaWeb.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("RaizesUrbanaWeb.Models.User", b =>

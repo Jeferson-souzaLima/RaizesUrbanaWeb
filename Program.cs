@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using RaizesUrbanaWeb.Data;
 using RaizesUrbanaWeb.Services; // Importando o namespace do UserService
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Configuração dos serviços
@@ -36,3 +37,4 @@ app.MapControllerRoute(
 // Se precisar de rotas adicionais, elas podem ser configuradas aqui.
 
 app.Run();
+

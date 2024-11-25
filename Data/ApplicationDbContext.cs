@@ -11,6 +11,8 @@ namespace RaizesUrbanaWeb.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
 
