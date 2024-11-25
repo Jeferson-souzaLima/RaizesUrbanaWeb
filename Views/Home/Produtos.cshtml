@@ -57,7 +57,7 @@
     </div>
 </div>
 
-<!-- Modal de Compra -->
+ <!-- Modal de Compra -->
 <div id="modal-compra" class="modal">
     <div class="modal-content">
         <span class="close" id="close-modal">&times;</span>
@@ -76,13 +76,9 @@
             <input type="radio" name="quantidade" value="10"> 10 Unidades - R$<span id="preco-10">0.00</span>
         </label>
 
-        <!-- Mensagem de Frete Grátis -->
-        <h3>Frete</h3>
-        <p>Frete Grátis para todas as compras!</p>
-
         <!-- Formulário de Pedido -->
         <h3>Preencha seus Dados</h3>
-        <form method="post" action="@Url.Action("FinalizarCompra", "Home")">
+        <form id="form-compra" method="post" action="@Url.Action("FinalizarCompra", "Home")">
             <input type="hidden" name="Produto" id="produto" />
             <input type="hidden" name="PrecoTotal" id="preco-total" />
             <input type="text" name="NomeRemetente" placeholder="Seu Nome" required />
@@ -96,14 +92,30 @@
                 <input type="radio" name="FormaPagamento" value="cartao"> Cartão de Crédito
             </label>
 
-            <!-- Mensagem Frete Grátis -->
-            <p>Frete Grátis!</p>
-
-            <button type="submit">Finalizar Compra</button>
+            <button type="button" id="btn-finalizar-compra">Finalizar Compra</button>
         </form>
+    </div>
+</div>  
+
+
+
+
 
 
 
 @section Scripts {
     <script src="~/js/modal-compra.js"></script>
 }
+
+<script>
+    $(document).ready(function () {
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <text>toastr.success('@TempData["MensagemSucesso"]');</text>
+    }
+    @if (TempData["MensagemErro"] != null)
+    {
+        <text>toastr.error('@TempData["MensagemErro"]');</text>
+    }
+    });
+</script>

@@ -8,7 +8,6 @@
         public string Produto { get; set; }  // Nome do produto
         public int Quantidade { get; set; }  // Quantidade do produto
         public string FormaPagamento { get; set; }  // Forma de pagamento (PIX ou Cartão)
-        public bool FreteGratis { get; set; }  // Se o frete foi grátis ou pago
         public decimal PrecoTotal { get; set; }  // Preço total do pedido
         public DateTime DataPedido { get; set; }  // Data e hora do pedido
     }

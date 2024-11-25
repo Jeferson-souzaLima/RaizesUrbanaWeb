@@ -9,16 +9,19 @@
   <ItemGroup>
     <Compile Remove="Business\**" />
     <Compile Remove="Data\Migrations\**" />
+    <Compile Remove="Views\Contact\**" />
     <Content Remove="Business\**" />
     <Content Remove="Data\Migrations\**" />
+    <Content Remove="Views\Contact\**" />
     <EmbeddedResource Remove="Business\**" />
     <EmbeddedResource Remove="Data\Migrations\**" />
+    <EmbeddedResource Remove="Views\Contact\**" />
     <None Remove="Business\**" />
     <None Remove="Data\Migrations\**" />
+    <None Remove="Views\Contact\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Contact\" />
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
 

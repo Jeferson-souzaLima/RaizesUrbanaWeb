@@ -8,6 +8,7 @@
     const preco3 = document.getElementById('preco-3');
     const preco10 = document.getElementById('preco-10');
     const btnFinalizar = document.getElementById('btn-finalizar-compra');
+    const formCompra = document.getElementById('form-compra');
 
     // Simulando dados de produto
     const produtos = {
@@ -41,11 +42,16 @@
 
     // Finalizar Compra
     btnFinalizar.addEventListener('click', () => {
-        // Exibir a notificação via Toastr
-        toastr.success('Compra finalizada com sucesso!', 'Sucesso');
+        const produto = nomeProdutoElem.innerText;
+        const quantidade = document.querySelector('input[name="quantidade"]:checked').value;
+        const formaPagamento = document.querySelector('input[name="FormaPagamento"]:checked').value;
 
-        // Fechar o modal
-        modal.style.display = 'none';
+        // Atualizar campos ocultos no formulário com os dados selecionados
+        document.getElementById('produto').value = produto;
+        document.getElementById('preco-total').value = parseFloat(precoUnidadeElem.innerText) * quantidade;
+
+        // Adicionar os dados ao formulário
+        formCompra.submit();
     });
 
     // Fechar modal ao clicar fora
@@ -55,3 +61,5 @@
         }
     });
 });
+
+

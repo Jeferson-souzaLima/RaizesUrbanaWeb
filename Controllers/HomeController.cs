@@ -139,12 +139,11 @@ namespace RaizesUrbanaWeb.Controllers
         }
 
         [HttpPost]
-        public IActionResult FinalizarCompra(Pedido pedido)
+        public IActionResult FinalizarCompra([FromForm] Pedido pedido)
         {
-            // Validação de dados (caso necessário)
             if (ModelState.IsValid)
             {
-                // Cálculo do preço total (exemplo simples)
+                // Calcular o preço total com base na quantidade
                 decimal precoUnitario = 0;
                 switch (pedido.Produto)
                 {
@@ -162,13 +161,8 @@ namespace RaizesUrbanaWeb.Controllers
                         break;
                 }
 
+                // Preço total do pedido
                 pedido.PrecoTotal = precoUnitario * pedido.Quantidade;
-
-                // Se o frete for grátis, definimos o preço total com frete grátis
-                if (pedido.FreteGratis)
-                {
-                    pedido.PrecoTotal += 0; // Ou qualquer lógica de frete grátis
-                }
 
                 // Definir a data do pedido
                 pedido.DataPedido = DateTime.Now;
@@ -177,15 +171,15 @@ namespace RaizesUrbanaWeb.Controllers
                 _context.Pedidos.Add(pedido);
                 _context.SaveChanges();
 
-                // Exibir uma mensagem de sucesso
-                TempData["Mensagem"] = "Compra finalizada com sucesso!";
-                return RedirectToAction("Produtos", "Home"); // Redirecionar para a página de produtos
+                //return Json(new { sucesso = true, mensagem = "Compra finalizada com sucesso!" });
+                return RedirectToAction("Produtos");
             }
 
-            // Caso o modelo esteja inválido, retornar para a view com erros
-            return View(pedido);
+            // Caso o modelo esteja inválido
+            //return Json(new { sucesso = false, mensagem = "Modelo de pedido inválido!", erros = ModelState.Values });
+            TempData["MensagemErro"] = "Erro ao enviar o contato. Verifique os dados e tente novamente.";
+            return RedirectToAction("Produtos");
         }
-
 
     }
 }

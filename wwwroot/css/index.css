@@ -2,47 +2,45 @@
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
     background: url('/img/inicio.png') no-repeat center center fixed;
-    background-size: cover; 
-    min-height: 100vh; 
+    background-size: cover;
+    min-height: 100vh;
 }
 
 .welcome-section {
-    height: 100vh; 
-    width: 100%; 
+    height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #FFD700;
     text-align: left;
     position: relative;
-    margin: 0; 
-    padding: 0; 
+    margin: 0;
+    padding: 0;
 }
 
-
 .welcome-message {
-    position: absolute; 
-    top: 20px; 
-    left: 20px; 
-    max-width: 600px; 
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 600px;
 }
 
     .welcome-message h1 {
         font-family: 'Kaushan Script', sans-serif;
-        font-size: 3rem; 
+        font-size: 3rem;
         margin-top: 80px;
-        margin-bottom: 0; 
+        margin-bottom: 0;
         color: white;
-        display: inline-block; 
-        text-align: center; 
-        width: 100%; 
+        display: inline-block;
+        text-align: center;
+        width: 100%;
     }
 
-    
     .welcome-message h2 {
         font-family: 'Kaushan Script', cursive;
-        font-size: 5rem; 
-        margin-bottom: 50px; 
+        font-size: 5rem;
+        margin-bottom: 50px;
         color: white;
         display: inline-block;
         text-align: center;
@@ -53,7 +51,7 @@
         font-family: 'Josefin Sans', sans-serif;
         font-size: 1.2rem;
         color: white;
-        margin-bottom: 50px; 
+        margin-bottom: 50px;
     }
 
 .btn-comprar-agora {
@@ -66,6 +64,7 @@
     border-radius: 30px;
     text-decoration: none;
     transition: all 0.3s ease;
+    border: none; 
 }
 
     .btn-comprar-agora:hover {
@@ -74,105 +73,92 @@
         text-decoration: none;
     }
 
-/* Estilização geral do modal */
+/* Estilização geral do Modal de Cadastro */
 .modal-content {
-    border-radius: 10px; /* Bordas arredondadas */
-    display: flex;
-    width: 600px; /* Tamanho do modal */
+    background-color: #006400; /* Verde escuro para todo o fundo */
+    border-radius: 15px; /* Cantos arredondados */
+    color: white;
+}
+
+.modal-header {
+    border-bottom: none; /* Remove a borda inferior */
+    text-align: center; /* Centraliza o conteúdo */
+    justify-content: center; /* Centraliza o título horizontalmente */
+    background-color: #006400; /* Garante a continuidade da cor */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.modal-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-align: center; /* Centraliza o texto */
 }
 
 .modal-body {
-    display: flex;
-    width: 100%;
-}
-
-/* Lado esquerdo do modal (Login) */
-.modal-left {
-    width: 33.33%; /* Um terço do tamanho */
-    background-color: #006400; /* Verde escuro */
-    color: white;
-    text-align: center;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    gap: 15px;
+    background-color: #006400; /* Verde escuro no fundo do corpo do modal */
+    color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
-.modal-logo {
-    width: 80%; /* Ajuste o tamanho conforme necessário */
-    margin-bottom: 20px;
-}
-
-.welcome-message {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.small-message {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-}
-
-.btn-entrar {
-    background-color: #FCC800;
-    color: black;
-    font-family: 'Josefin Sans', sans-serif;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-.forgot-password {
-    font-size: 12px;
-    margin-top: 10px;
-}
-
-    .forgot-password a {
-        color: #006400; /* Verde escuro */
-        text-decoration: none;
-    }
-
-/* Lado direito do modal (Cadastro) */
-.modal-right {
-    width: 66.66%; /* Dois terços do tamanho */
-    background-color: white;
-    padding: 20px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-    .modal-right h5 {
-        font-family: 'Josefin Sans', sans-serif;
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-
-.form-label {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-}
-
+/* Campos de formulário */
 .form-control {
-    margin-bottom: 15px;
+    border: none; /* Remove a borda padrão */
+    border-radius: 10px; /* Cantos arredondados */
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    color: black; /* Texto do input */
+    background-color: white; /* Fundo branco */
+    padding: 10px;
 }
 
-.btn-criar-conta {
+    .form-control::placeholder {
+        color: black; /* Placeholder em preto */
+        font-style: italic;
+    }
+
+/* Remove os rótulos dos campos acima */
+.form-label {
+    display: none; /* Oculta os rótulos */
+}
+
+/* Botão de Cadastro */
+.btn.btn-success {
     background-color: #FCC800;
     color: black;
     font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 10px;
     width: 100%;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+    .btn.btn-success:hover {
+        background-color: #f39c12;
+        color: white;
+    }
+
+/* Link para login */
+.btn-link {
+    color: #FCC800;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+    .btn-link:hover {
+        text-decoration: underline;
+        color: #f39c12;
+    }
